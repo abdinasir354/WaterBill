@@ -30,7 +30,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
+        
           <div>
             <h3 className="text-white font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
@@ -60,7 +60,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          
           <div>
             <h3 className="text-white font-bold mb-4">Contact Us</h3>
             <ul className="space-y-3 text-sm">
@@ -79,7 +79,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Socials */}
+       
           <div>
             <h3 className="text-white font-bold mb-4">Follow Us</h3>
             <div className="flex gap-4">

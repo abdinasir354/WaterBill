@@ -53,7 +53,7 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Desktop Auth Buttons */}
+     
         <div className="hidden md:flex items-center gap-4">
           {!user ? (
             <>
@@ -79,7 +79,7 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Mobile Menu Toggle */}
+      
         <button
           className="md:hidden text-gray-800"
           onClick={() => setOpen(!open)}
@@ -88,7 +88,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      
       {open && (
         <div className="md:hidden bg-white border-t border-gray-200 shadow-md px-6 py-6 space-y-4 flex flex-col items-center">
           <NavLink to="/" className={linkClass} onClick={() => setOpen(false)}>

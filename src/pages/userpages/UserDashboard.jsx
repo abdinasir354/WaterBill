@@ -31,7 +31,7 @@ function UserDashboard() {
     { icon: CreditCard, label: "Payments", path: "./payments" },
   ];
 
-  // Breadcrumbs
+
   const breadcrumbs = location.pathname
     .split("/")
     .filter(Boolean)
@@ -40,7 +40,7 @@ function UserDashboard() {
       path: "/" + arr.slice(0, index + 1).join("/"),
     }));
 
-  // 🔹 User Payment Stats
+  
   const userBills = bills?.filter((b) => b.userId === user?.id) || [];
   const totalPaid = userBills
     .filter((b) => b.status === "Paid")
@@ -49,26 +49,26 @@ function UserDashboard() {
     .filter((b) => b.status === "Pending")
     .reduce((sum, b) => sum + parseFloat(b.amount), 0);
 
-  // Greeting
+ 
   const hour = new Date().getHours();
   const greeting =
     hour < 12 ? "Good Morning" : hour < 18 ? "Good Afternoon" : "Good Evening";
 
   return (
     <div className="flex h-screen bg-gray-50 font-sans">
-      {/* Sidebar */}
+     
       <aside
         className={`fixed lg:static inset-y-0 left-0 w-72 bg-indigo-950 text-white flex flex-col shadow-sm z-30 transform transition-transform duration-300
         ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
       >
-        {/* Mobile Close Button */}
+        
         <div className="lg:hidden flex justify-end p-4">
           <button onClick={() => setIsOpen(false)}>
             <X size={22} />
           </button>
         </div>
 
-        {/* Branding */}
+        
         <div className="p-8 pb-4">
           <div className="flex items-center gap-3 mb-1">
             <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
@@ -83,7 +83,7 @@ function UserDashboard() {
           </p>
         </div>
 
-        {/* Menu */}
+       
         <nav className="flex-1 p-4 space-y-2 mt-4">
           {menuItems.map((item) => (
             <NavLink
@@ -111,7 +111,6 @@ function UserDashboard() {
           ))}
         </nav>
 
-        {/* User Info */}
         <div className="p-4 m-4 bg-gray-50 rounded-2xl border border-gray-100 flex flex-col items-center">
           <div
             className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-sm font-bold text-white shadow-md cursor-pointer hover:scale-105 transition-transform"
@@ -122,7 +121,7 @@ function UserDashboard() {
           <p className="text-sm font-bold text-gray-900 mt-2">{user?.name}</p>
           <p className="text-xs text-gray-500">Standard Plan</p>
 
-          {/* Dropdown */}
+         
           {userDropdown && (
             <div className="mt-3 w-full bg-white rounded-lg shadow-md border border-gray-200 text-gray-800 py-2">
               <button
@@ -136,7 +135,6 @@ function UserDashboard() {
         </div>
       </aside>
 
-      {/* Overlay */}
       {isOpen && (
         <div
           onClick={() => setIsOpen(false)}
@@ -144,9 +142,9 @@ function UserDashboard() {
         />
       )}
 
-      {/* Main Content */}
+    
       <main className="flex-1 overflow-y-auto bg-gray-50">
-        {/* Desktop Header + Stats */}
+        
         <header className="bg-white sticky top-0 z-10 px-8 py-5 border-b border-gray-200 hidden lg:flex flex-col gap-4">
           <div className="flex justify-between items-center">
             <div>
@@ -171,7 +169,7 @@ function UserDashboard() {
             </div>
           </div>
 
-          {/* Payment Stats Cards */}
+        
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
             <div className="bg-white rounded-lg shadow p-4 flex flex-col items-start">
               <span className="text-xs font-medium text-gray-500 uppercase">
@@ -226,7 +224,7 @@ function UserDashboard() {
           </div>
         </header>
 
-        {/* Mobile Header */}
+     
         <header className="lg:hidden bg-white p-4 border-b border-gray-200 flex justify-between items-center">
           <h1 className="text-xl font-bold text-gray-800">AquaPay</h1>
           <button
@@ -237,7 +235,7 @@ function UserDashboard() {
           </button>
         </header>
 
-        {/* Breadcrumbs */}
+ 
         <div className="px-6 lg:px-10 pt-6">
           <nav className="text-sm text-gray-500 mb-4 flex gap-1 flex-wrap">
             {breadcrumbs.map((crumb, idx) => (
@@ -251,7 +249,7 @@ function UserDashboard() {
           </nav>
         </div>
 
-        {/* Main Outlet */}
+     
         <div className="p-6 lg:p-10 max-w-6xl mx-auto">
           <Outlet />
         </div>

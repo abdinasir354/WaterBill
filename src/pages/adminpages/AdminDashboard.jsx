@@ -38,7 +38,7 @@ function AdminDashboard() {
     .filter(Boolean)
     .map((p) => p.charAt(0).toUpperCase() + p.slice(1));
 
-  // 🔹 LIVE STATS
+  //  LIVE STATS
   const totalUsers = users?.length || 0;
 
   const totalPaid =
@@ -53,19 +53,19 @@ function AdminDashboard() {
 
   return (
     <div className="flex h-screen bg-gray-50 font-sans">
-      {/* Sidebar */}
+      
       <aside
         className={`fixed lg:static inset-y-0 left-0 w-72 bg-indigo-950 text-white flex flex-col shadow-2xl z-30 transform transition-transform duration-300
         ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
       >
-        {/* Mobile Close Button */}
+        
         <div className="lg:hidden flex justify-end p-4">
           <button onClick={() => setIsOpen(false)}>
             <X size={22} />
           </button>
         </div>
 
-        {/* Logo */}
+        
         <div className="p-8 pb-4 border-b border-indigo-900/50">
           <div className="flex items-center gap-3 mb-1">
             <div className="w-10 h-10 bg-gradient-to-tr from-sky-400 to-indigo-500 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-900/40">
@@ -80,7 +80,7 @@ function AdminDashboard() {
           </p>
         </div>
 
-        {/* Sidebar Menu */}
+       
         <nav className="flex-1 p-4 space-y-2 mt-4">
           {menuItems.map((item) => (
             <NavLink
@@ -95,7 +95,7 @@ function AdminDashboard() {
           ))}
         </nav>
 
-        {/* User Panel */}
+        
         <div className="p-4 m-4 bg-indigo-900/50 rounded-2xl">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center">
@@ -115,9 +115,9 @@ function AdminDashboard() {
         </div>
       </aside>
 
-      {/* Main Content */}
+      
       <main className="flex-1 overflow-y-auto">
-        {/* Desktop Header */}
+       
         <header className="bg-white/90 backdrop-blur-md sticky top-0 z-10 px-8 py-5 border-b border-gray-200/50 hidden lg:flex justify-between items-start">
           <div className="space-y-2 w-full">
             <h1 className="text-2xl font-bold text-gray-800">

@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
           (u) => u.email === email && password === (u.password || "user123")
         );
 
-        // Hardcoded admin/user check
+       
         let defaultUser = null;
         if (email === "admin@aquapay.com" && password === "admin123") {
           defaultUser = {
@@ -64,13 +64,13 @@ export const AuthProvider = ({ children }) => {
           return;
         }
 
-        // Wrong login
+      
         const newAttempts = attempts + 1;
         setAttempts(newAttempts);
 
         if (newAttempts >= 3) {
-          setBlockedUntil(now + 30 * 1000); // block 30s
-          setAttempts(0); // reset attempts after block
+          setBlockedUntil(now + 30 * 1000); 
+          setAttempts(0);
           reject(
             new Error("Too many attempts! Wait 30 seconds before trying again.")
           );

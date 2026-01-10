@@ -52,7 +52,7 @@ function Users() {
 
   return (
     <div className="space-y-6">
-      {/* Header Actions */}
+     
       <div className="flex flex-col sm:flex-row justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100 gap-4">
         <div>
           <h2 className="text-lg font-semibold text-gray-900">
@@ -71,7 +71,7 @@ function Users() {
         </button>
       </div>
 
-      {/* Add User Form */}
+    
       {showAddForm && (
         <div className="bg-indigo-50 p-6 rounded-xl border border-indigo-100 animate-in fade-in slide-in-from-top-4">
           <h3 className="font-semibold text-indigo-900 mb-4 flex items-center gap-2">

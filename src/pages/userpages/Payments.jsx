@@ -13,7 +13,7 @@ function Payments() {
   const [phone, setPhone] = useState("");
 
   
-  // Filter bills for current user
+  
   const userBills = bills ? bills.filter(b => b.userId === user.id) : [];
   const pendingBills = userBills.filter(b => b.status === 'Pending');
   const paidBills = userBills.filter(b => b.status === 'Paid');
@@ -32,19 +32,18 @@ function Payments() {
    canvas.width = 700;
    canvas.height = 400;
 
-   // Background
+ 
    ctx.fillStyle = "#0a192f";
    ctx.fillRect(7, 7, canvas.width, canvas.height);
    
    <hr />
 
-   // Title
+ 
    ctx.fillStyle = "#4f46e5";
    ctx.font = "bold 28px Arial";
    ctx.fillText("Payment Receipt", 190, 70);
    ctx.hr
 
-   // Content
    ctx.fillStyle = "#fff";
    ctx.font = "20px Arial";
    
@@ -66,12 +65,12 @@ function Payments() {
      ctx.fillText(line, 80, 120 + i * 30);
    });
 
-   // Footer
+
    ctx.fillStyle = "#6b7280";
    ctx.font = "14px Arial";
    ctx.fillText("Thank you for your payment!", 200, 360);
 
-   // Download Image
+
    const link = document.createElement("a");
    link.download = `receipt_${bill.id}.png`;
    link.href = canvas.toDataURL("image/png");
@@ -80,7 +79,7 @@ function Payments() {
 
   return (
     <div className="max-w-5xl mx-auto space-y-8">
-      {/* Pending Invoices Section (Pro Design) */}
+  
       <section>
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
@@ -138,7 +137,7 @@ function Payments() {
         </div>
       </section>
 
-      {/* Payment History */}
+      
       <section>
         <div className="p-2 border-b border-gray-200 mb-4">
           <h3 className="text-lg font-semibold text-gray-700 flex items-center gap-2">
@@ -226,7 +225,7 @@ function Payments() {
       {showForm && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
           <div className="bg-white rounded-2xl p-6 w-full max-w-md shadow-xl space-y-5">
-            {/* Header */}
+           
             <div className="text-center">
               <h3 className="text-xl font-bold text-gray-800">
                 Secure Payment
@@ -236,7 +235,7 @@ function Payments() {
               </p>
             </div>
 
-            {/* Payment Method */}
+            
             <div className="space-y-2">
               <label className="text-sm font-medium text-gray-700">
                 Choose Payment Method

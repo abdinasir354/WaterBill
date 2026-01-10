@@ -4,7 +4,6 @@ const DataContext = createContext();
 export const useData = () => useContext(DataContext);
 
 export const DataProvider = ({ children }) => {
-  /* ===================== USERS ===================== */
   const [users, setUsers] = useState(() => {
     const saved = localStorage.getItem("aquaPayUsers");
     return saved ? JSON.parse(saved) : [];
@@ -14,7 +13,7 @@ export const DataProvider = ({ children }) => {
     localStorage.setItem("aquaPayUsers", JSON.stringify(users));
   }, [users]);
 
-  /* ===================== BILLS ===================== */
+ 
   const [bills, setBills] = useState(() => {
     const saved = localStorage.getItem("aquaPayBills");
     return saved ? JSON.parse(saved) : [];
@@ -24,7 +23,7 @@ export const DataProvider = ({ children }) => {
     localStorage.setItem("aquaPayBills", JSON.stringify(bills));
   }, [bills]);
 
-  /* 🔥 AUTO-REMOVE UNKNOWN USER TRANSACTIONS */
+
   useEffect(() => {
     const validUserIds = users.map((u) => u.id);
 
@@ -38,7 +37,7 @@ export const DataProvider = ({ children }) => {
     });
   }, [users]);
 
-  /* ===================== USER ACTIONS ===================== */
+  
   const addUser = (userData) => {
     const newUser = {
       id: Date.now().toString(),

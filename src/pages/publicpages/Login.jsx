@@ -19,8 +19,7 @@ const Login = () => {
 
     try {
       const user = await login(email, password);
-      // Determine dashboard based on user role (logic from auth context/previous implementation)
-      // Assuming logic exists in login or we handle it here:
+     
       if (user.role === 'admin') {
         navigate('/admin');
       } else {
@@ -35,7 +34,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-900 font-sans">
-      {/* Navbar Placeholder or Component if needed */}
+      
        <nav className="p-6 flex justify-between items-center text-white">
           <Link to="/" className="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
             AquaPay
