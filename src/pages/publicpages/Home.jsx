@@ -141,7 +141,7 @@ const Home = () => {
               <div className="w-full md:w-1/2 space-y-8">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in-up">
                   Simple Steps to{" "}
-                  <span className="text-[#22d3ee]">Peace of Mind</span>
+                  <span className="text-[#a7c8f2]">Peace of Mind</span>
                 </h2>
 
                 {[

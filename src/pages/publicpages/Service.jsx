@@ -4,8 +4,10 @@ import { CreditCard } from "lucide-react";
 import { History } from "lucide-react";
 import { Bell } from "lucide-react";
 import { Smartphone } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function Service() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="min-h-screen bg-slate-950 text-white">
@@ -151,11 +153,11 @@ function Service() {
             </p>
 
             <div className="flex justify-center gap-4">
-              <button className="px-8 py-3 bg-cyan-400 text-slate-950 font-semibold rounded-lg hover:bg-cyan-300 transition">
+              <button
+                onClick={() => navigate("/signup")}
+                className="px-8 py-3 bg-cyan-400 text-slate-950 font-semibold rounded-lg hover:bg-cyan-300 transition"
+              >
                 Get Started
-              </button>
-              <button className="px-8 py-3 border border-slate-700 rounded-lg hover:border-cyan-400 transition">
-                Contact Sales
               </button>
             </div>
           </div>
