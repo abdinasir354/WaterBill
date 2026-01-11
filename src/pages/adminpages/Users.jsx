@@ -102,7 +102,7 @@ function Users() {
               <input
                 type="email"
                 className="w-full border-gray-200 rounded-xl bg-white focus:ring-2 focus:ring-indigo-500 shadow-sm py-2.5 px-4 text-sm"
-                placeholder="Gali Emailka macmiil"
+                placeholder="Enter user Email"
                 value={newEmail}
                 onChange={(e) => setNewEmail(e.target.value)}
                 required
@@ -116,7 +116,7 @@ function Users() {
               <input
                 type="password"
                 className="w-full border-gray-200 rounded-xl bg-white focus:ring-2 focus:ring-indigo-500 shadow-sm py-2.5 px-4 text-sm"
-                placeholder="Gali passwordka macmiilka"
+                placeholder="Enter user password"
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
                 required
